@@ -26,6 +26,7 @@ public class StoriesProgressView extends LinearLayout {
     private int primaryProgressColor = -1;
     private int secondaryProgressColor = -1;
     private int maxProgressColor = -1;
+    private long storyDuration = -1;
     /**
      * pointer of running animation
      */
@@ -151,6 +152,7 @@ public class StoriesProgressView extends LinearLayout {
      * @param duration millisecond
      */
     public void setStoryDuration(long duration) {
+        this.storyDuration = duration;
         for (int i = 0; i < progressBars.size(); i++) {
             progressBars.get(i).setDuration(duration);
             progressBars.get(i).setCallback(callback(i));
@@ -215,6 +217,9 @@ public class StoriesProgressView extends LinearLayout {
     public void restart() {
         isComplete = false;
         current = 0;
+
+        setStoriesCount(storiesCount);
+        setStoryDuration(storyDuration);
         startStories(0);
     }
 
