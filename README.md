@@ -110,7 +110,7 @@ Add the dependency
 
 ```
 dependencies {
-    implementation 'com.github.dajver:StoriesProgressView:3.0.0'
+    implementation 'com.github.dajver:StoriesProgressView:3.0.2'
 }
 
 ```
