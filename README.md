@@ -3,7 +3,7 @@ StoriesProgressView
 
 Library that shows a horizontal progress like Instagram stories.
 
-[![](https://jitpack.io/v/shts/StoriesProgressView.svg)](https://jitpack.io/#shts/StoriesProgressView)
+[![](https://jitpack.io/v/dajver/StoriesProgressView.svg)](https://jitpack.io/#dajver/StoriesProgressView)
 
 <img src="image/capture.png" width=200 />
 
