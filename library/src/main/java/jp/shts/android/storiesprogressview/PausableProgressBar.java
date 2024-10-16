@@ -21,6 +21,7 @@ final class PausableProgressBar extends FrameLayout {
     private static final int DEFAULT_PROGRESS_DURATION = 2000;
 
     private View frontProgressView;
+    private View secondaryProgressView;
     private View maxProgressView;
 
     private PausableScaleAnimation animation;
@@ -44,6 +45,7 @@ final class PausableProgressBar extends FrameLayout {
         super(context, attrs, defStyleAttr);
         LayoutInflater.from(context).inflate(R.layout.pausable_progress, this);
         frontProgressView = findViewById(R.id.front_progress);
+        secondaryProgressView = findViewById(R.id.back_progress);
         maxProgressView = findViewById(R.id.max_progress); // work around
     }
 
@@ -93,6 +95,12 @@ final class PausableProgressBar extends FrameLayout {
                 callback.onFinishProgress();
             }
         }
+    }
+
+    public void setProgressColors(int primaryProgressColor, int secondaryProgressColor, int maxProgressColor) {
+        frontProgressView.setBackgroundColor(primaryProgressColor);
+        secondaryProgressView.setBackgroundColor(secondaryProgressColor);
+        maxProgressView.setBackgroundColor(maxProgressColor);
     }
 
     public void startProgress() {

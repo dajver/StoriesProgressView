@@ -2,5 +2,8 @@
 <resources>
     <declare-styleable name="StoriesProgressView">
         <attr name="progressCount" format="integer|reference" />
+        <attr name="primaryProgressColor" format="color" />
+        <attr name="secondaryProgressColor" format="color" />
+        <attr name="maxActiveProgressColor" format="color" />
     </declare-styleable>
 </resources>

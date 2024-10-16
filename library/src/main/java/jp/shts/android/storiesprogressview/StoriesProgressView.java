@@ -23,6 +23,9 @@ public class StoriesProgressView extends LinearLayout {
     private final List<PausableProgressBar> progressBars = new ArrayList<>();
 
     private int storiesCount = -1;
+    private int primaryProgressColor = -1;
+    private int secondaryProgressColor = -1;
+    private int maxProgressColor = -1;
     /**
      * pointer of running animation
      */
@@ -65,6 +68,9 @@ public class StoriesProgressView extends LinearLayout {
         setOrientation(LinearLayout.HORIZONTAL);
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.StoriesProgressView);
         storiesCount = typedArray.getInt(R.styleable.StoriesProgressView_progressCount, 0);
+        primaryProgressColor = typedArray.getColor(R.styleable.StoriesProgressView_primaryProgressColor, context.getColor(R.color.progress_primary));
+        secondaryProgressColor = typedArray.getColor(R.styleable.StoriesProgressView_maxActiveProgressColor, context.getColor(R.color.progress_secondary));
+        maxProgressColor = typedArray.getColor(R.styleable.StoriesProgressView_maxActiveProgressColor, context.getColor(R.color.progress_max_active));
         typedArray.recycle();
         bindViews();
     }
@@ -85,6 +91,7 @@ public class StoriesProgressView extends LinearLayout {
 
     private PausableProgressBar createProgressBar() {
         PausableProgressBar p = new PausableProgressBar(getContext());
+        p.setProgressColors(primaryProgressColor, secondaryProgressColor, maxProgressColor);
         p.setLayoutParams(PROGRESS_BAR_LAYOUT_PARAM);
         return p;
     }
