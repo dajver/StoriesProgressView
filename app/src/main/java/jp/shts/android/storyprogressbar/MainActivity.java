@@ -103,6 +103,8 @@ public class MainActivity extends AppCompatActivity implements StoriesProgressVi
 
     @Override
     public void onComplete() {
+        counter = 0;
+        storiesProgressView.restart();
     }
 
     @Override

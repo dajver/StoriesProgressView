@@ -212,6 +212,12 @@ public class StoriesProgressView extends LinearLayout {
         progressBars.get(0).startProgress();
     }
 
+    public void restart() {
+        isComplete = false;
+        current = 0;
+        startStories(0);
+    }
+
     /**
      * Start progress animation from specific progress
      */
