@@ -17,9 +17,14 @@ How to Use
 To see how a StoriesProgressView can be added to your xml layouts, check the sample project.
 
 ```xml
-    <jp.shts.android.storiesprogressview.StoriesProgressView
+     <jp.shts.android.storiesprogressview.StoriesProgressView
         android:id="@+id/stories"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
         android:layout_width="match_parent"
+        app:primaryProgressColor="#E20000"
+        app:secondaryProgressColor="#00397F"
+        app:maxActiveProgressColor="#00794F"
         android:layout_height="3dp"
         android:layout_gravity="top"
         android:layout_marginTop="8dp" />
@@ -105,7 +110,7 @@ Add the dependency
 
 ```
 dependencies {
-    implementation 'com.github.shts:StoriesProgressView:3.0.0'
+    implementation 'com.github.dajver:StoriesProgressView:3.0.0'
 }
 
 ```
